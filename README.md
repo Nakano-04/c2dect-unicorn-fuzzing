@@ -1,4 +1,4 @@
-# Plan 6 — Fuzzing/emulación con Unicorn
+# Plan 6 - Fuzzing/emulación con Unicorn
 
 **Solo información y resultados.** Sin código fuente.
 
@@ -28,7 +28,7 @@ validado, en coherencia con el contrato `truth.Outcome`.
 
 ## Prototipo verificable
 
-`crash_triage.py` — huellas de crash, deduplicación, minimización por
+`crash_triage.py` - huellas de crash, deduplicación, minimización por
 delta-debugging, cobertura acumulada de aristas, tasa de reproducción e informe
 de campaña. No ejecuta Unicorn: consume registros sintéticos.
 

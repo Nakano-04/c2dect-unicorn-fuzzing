@@ -1,4 +1,4 @@
-# Ejecutable Zig — `triage_zig`
+# Ejecutable Zig - `triage_zig`
 
 Triaje de crashes en Zig 0.17.1. Calcula la huella SHA256 (senal|RIP|stack) de
 cada registro y agrupa por crash único.

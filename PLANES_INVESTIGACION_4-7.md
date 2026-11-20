@@ -1,4 +1,4 @@
-# Planes de investigación 4–7 — C2-DECT
+# Planes de investigación 4–7 - C2-DECT
 
 > Fecha: 2026-11-19
 > Alcance: **laboratorio aislado, alcance declarado y RoE firmada**. Ninguna línea
@@ -10,14 +10,14 @@
 
 | Orden | Línea | ¿Por qué |
 |---|---|---|
-| 1 | **5 — Hardening del propio C2** | Solo análisis estático + CI. Cero dependencias de laboratorio. |
-| 2 | **6 — Fuzzing/emulación Unicorn** | El código real ya existe; solo falta medirlo y publicarlo. |
-| 3 | **7 — Dataset de telemetría** | Requiere ejecutar la campaña en lab para generar datos reales. |
-| 4 | **4 — Validación de SOC** | Depende del dataset (7): necesita telemetría etiquetada antes/después. |
+| 1 | **5 - Hardening del propio C2** | Solo análisis estático + CI. Cero dependencias de laboratorio. |
+| 2 | **6 - Fuzzing/emulación Unicorn** | El código real ya existe; solo falta medirlo y publicarlo. |
+| 3 | **7 - Dataset de telemetría** | Requiere ejecutar la campaña en lab para generar datos reales. |
+| 4 | **4 - Validación de SOC** | Depende del dataset (7): necesita telemetría etiquetada antes/después. |
 
 ---
 
-## Plan 5 — Harness repetible de seguridad del C2
+## Plan 5 - Harness repetible de seguridad del C2
 
 **Hipótesis.** Los hallazgos de `AUDITORIA_OFENSIVA_c2-dect_2026.md` son
 reproducibles como gates automáticos de CI, de modo que una regresión de
@@ -56,7 +56,7 @@ allowlist documentada y modo `report-only` previo.
 
 ---
 
-## Plan 6 — Fuzzing/emulación con Unicorn (medir y publicar)
+## Plan 6 - Fuzzing/emulación con Unicorn (medir y publicar)
 
 **Hipótesis.** El backend de emulación ya produce crashes reales y snapshots
 reales; al añadir deduplicación, minimización y métricas de cobertura se convierte
@@ -91,7 +91,7 @@ siempre como "crash de emulación", nunca como RCE validado (coherente con
 
 ---
 
-## Plan 7 — Dataset de telemetría etiquetado del laboratorio
+## Plan 7 - Dataset de telemetría etiquetado del laboratorio
 
 **Hipótesis.** Se puede publicar un dataset de telemetría de un laboratorio
 aislado, etiquetado por técnica y con veredictos de detección, lo bastante
@@ -129,7 +129,7 @@ como si fuera real: se marca `no-ejecutada` y se reporta como brecha (G3).
 
 ---
 
-## Plan 4 — Validación de SOC con grupo de control
+## Plan 4 - Validación de SOC con grupo de control
 
 **Hipótesis.** El uso estructurado de C2-DECT reduce el tiempo de detección y
 contención de un SOC frente a un grupo que no lo usa, con control de falsos
@@ -162,7 +162,7 @@ técnicas y documentar la composición de ambos brazos.
 
 ## Progreso
 
-### Plan 5 — primer corte entregado (2026-11-19)
+### Plan 5 - primer corte entregado (2026-11-19)
 
 - `[NUEVO]` `tools/hardening/check_hardening.py`: gates HARD-01..04, stdlib
   puro, salida humana o `--json`, `exit 1` si cualquier gate falla.
