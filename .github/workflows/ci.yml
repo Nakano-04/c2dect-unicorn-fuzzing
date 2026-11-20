@@ -11,3 +11,17 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m unittest discover -v
+
+  zig:
+    name: Zig executable
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Install Zig 0.17.1
+        run: |
+          curl -L -o zig.tar.xz https://ziglang.org/download/0.17.1/zig-x86_64-linux-0.17.1.tar.xz
+          tar -xJf zig.tar.xz
+          echo "$PWD/zig-x86_64-linux-0.17.1" >> "$GITHUB_PATH"
+      - run: zig version
+      - run: zig build
+      - run: zig build test

@@ -42,6 +42,13 @@ python crash_triage.py minimize --seed xxxCRASHyyy --marker CRASH
 Resultado medido en `results.json`, con el SHA256 de `fixtures/crashes.json`.
 CI ejecuta los tests en cada push.
 
+## Dimensión ofensiva
+
+El fuzzing con emulación es la capa ofensiva de descubrimiento: explora
+comportamientos de un target de laboratorio sin ejecutarlo en un sistema real.
+Los crashes se reportan como **crash de emulación**, nunca como RCE validado
+(ver `c2dect-investigacion/OFENSIVA/04-resistencia-deteccion-metodo.md`).
+
 ## Ámbito
 
 Laboratorio aislado, alcance declarado y RoE firmada. Uso exclusivamente
