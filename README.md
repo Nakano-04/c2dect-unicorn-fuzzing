@@ -26,6 +26,22 @@ reproducción de crashes y precisión del finder de gadgets frente a un baseline
 Los crashes de emulación se reportan como **crash de emulación**, nunca como RCE
 validado, en coherencia con el contrato `truth.Outcome`.
 
+## Prototipo verificable
+
+`crash_triage.py` — huellas de crash, deduplicación, minimización por
+delta-debugging, cobertura acumulada de aristas, tasa de reproducción e informe
+de campaña. No ejecuta Unicorn: consume registros sintéticos.
+
+```powershell
+python -m unittest discover -v
+python crash_triage.py dedupe fixtures/crashes.json
+python crash_triage.py report fixtures/crashes.json
+python crash_triage.py minimize --seed xxxCRASHyyy --marker CRASH
+```
+
+Resultado medido en `results.json`, con el SHA256 de `fixtures/crashes.json`.
+CI ejecuta los tests en cada push.
+
 ## Ámbito
 
 Laboratorio aislado, alcance declarado y RoE firmada. Uso exclusivamente

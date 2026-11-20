@@ -1,0 +1,100 @@
+{
+  "crashes": {
+    "total": 5,
+    "unique": 3,
+    "groups": [
+      {
+        "fingerprint": "7aaa3f533f56814b",
+        "count": 3,
+        "example": {
+          "run": 1,
+          "signal": "SIGSEGV",
+          "rip": "0x1000",
+          "stack": "[ret]",
+          "input": "AAAA",
+          "edges": [
+            "A",
+            "B"
+          ],
+          "reproduced": true
+        }
+      },
+      {
+        "fingerprint": "6fae4edce567eec0",
+        "count": 1,
+        "example": {
+          "run": 4,
+          "signal": "SIGILL",
+          "rip": "0x2000",
+          "stack": "[jmp]",
+          "input": "DDDD",
+          "edges": [
+            "A",
+            "E"
+          ],
+          "reproduced": true
+        }
+      },
+      {
+        "fingerprint": "d2c185beac9a61cd",
+        "count": 1,
+        "example": {
+          "run": 5,
+          "signal": "SIGABRT",
+          "rip": "0x3000",
+          "stack": "[abt]",
+          "input": "EEEE",
+          "edges": [],
+          "reproduced": false
+        }
+      }
+    ]
+  },
+  "coverage": {
+    "runs": 5,
+    "total_edges": 5,
+    "edges": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "per_run": [
+      {
+        "run": 1,
+        "edges": 2,
+        "new_edges": 2
+      },
+      {
+        "run": 2,
+        "edges": 2,
+        "new_edges": 1
+      },
+      {
+        "run": 3,
+        "edges": 2,
+        "new_edges": 1
+      },
+      {
+        "run": 4,
+        "edges": 2,
+        "new_edges": 1
+      },
+      {
+        "run": 5,
+        "edges": 0,
+        "new_edges": 0
+      }
+    ]
+  },
+  "reproducibility": {
+    "total": 5,
+    "reproduced": 3,
+    "rate": 0.6
+  },
+  "exec_per_unique_crash": 1.6667,
+  "fixture_sha256": {
+    "fixtures/crashes.json": "b70944efc26e5b552a3eaf1edf14d890e34b3103ffd5713f877e0903a60d8013"
+  }
+}

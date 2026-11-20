@@ -1,0 +1,7 @@
+[
+  {"run": 1, "signal": "SIGSEGV", "rip": "0x1000", "stack": "[ret]", "input": "AAAA", "edges": ["A", "B"], "reproduced": true},
+  {"run": 2, "signal": "SIGSEGV", "rip": "0x1000", "stack": "[ret]", "input": "BBBB", "edges": ["B", "C"], "reproduced": true},
+  {"run": 3, "signal": "SIGSEGV", "rip": "0x1000", "stack": "[ret]", "input": "CCCC", "edges": ["C", "D"], "reproduced": false},
+  {"run": 4, "signal": "SIGILL",  "rip": "0x2000", "stack": "[jmp]", "input": "DDDD", "edges": ["A", "E"], "reproduced": true},
+  {"run": 5, "signal": "SIGABRT", "rip": "0x3000", "stack": "[abt]", "input": "EEEE", "edges": [], "reproduced": false}
+]
